@@ -195,13 +195,12 @@ $(document).ready(function(){
 				if (data == "true") 
 				{
 					//$('#limensaje').hide().delay(800).show();
-					$('#limensaje').hide();
+					$('#mensaje').hide(400).delay(5000).show(0);
 					$("#mensaje-enviado").css("color","#399");
 					$("#mensaje-enviado").html('Tu mensaje ha sido enviado.');						
 				}
 				else
-				{
-					alert(data);
+				{					
 					$("#mensaje-enviado").css("color","#C00");
 					$("#mensaje-enviado").html('Ocurrió un problema al enviar tu mensaje,<br /> intenta nuevamente en instantes.');						
 				}
