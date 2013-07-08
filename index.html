@@ -39,18 +39,26 @@ function playPause() {
 	var song = document.getElementsByTagName('audio')[0];
 	if (song.paused)
 	{
-		song.play();
-		$("#activar_play").hide();
-		$("#activar_pausa").show();
+		song.play();		
 	}
 	else
 	{
-		song.pause();
-		$("#activar_pausa").hide();
-		$("#activar_play").show();
+		song.pause();		
 	}
 }	
 $(document).ready(function(){	
+	$('#activar_play').click(function() { 
+		playPause();
+		$("#activar_play").hide();
+		$("#activar_pausa").show();
+	});
+	
+	$('#activar_pausa').click(function() { 
+		playPause();
+		$("#activar_pausa").hide();
+		$("#activar_play").show();
+	});	
+
 	$('#linkenvivo').click(function() {		
 		$('#lifacebook').hide('fade',200);
 		$('#litwitter').hide('fade',200);
@@ -209,7 +217,20 @@ $(document).ready(function(){
             San Salvador de Jujuy, Argentina.          
             </li>
             <!-- Main menu with font awesome icon -->
-            
+            <li id="linkenvivo"><a href="#"><i class="icon-play"></i> EN VIVO<span class="pull-right"><i class="icon-chevron-right"></i></span></a></li>
+            <li id="lienvivo" class="oculto">
+           		<div id="envivo">
+                	<div id="reproductor"></div><br />
+                    <div id="activar_play"><img src="img/reproducir.png" /></div>
+                    <div id="activar_pausa"><img src="img/pausar.png" /></div>
+                  	<div id="datos_radio">Estás escuchando<br />
+                    <div id="imagen"></div>
+                    <div id="programa"></div><br />
+                    Conduce <div id="conduce"></div>
+                    <div id="horario"></div>
+                    </div>
+                </div>
+            </li>
 			
             <li id="linkmensaje"><a href="#"><i class="icon-comments"></i> ENVIAR MENSAJE  <span class="pull-right"><i class="icon-chevron-right"></i></span></a></li>
             <li id="limensaje" class="oculto">
