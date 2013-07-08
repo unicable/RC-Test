@@ -160,7 +160,11 @@ $(document).ready(function(){
 	  	},
 	});
 	
+	//Enviamos mensaje
 	$("#boton_enviar").click(function() {
+		
+		alert($("#pedido").serialize());
+		
 		if ($("#nombre").val().length < 1) {
 			$("#label_nombre").html('Escribe un nombre.');
 			return false;			
@@ -197,8 +201,9 @@ $(document).ready(function(){
 				}
 				else
 				{
+					alert(data);
 					$("#mensaje-enviado").css("color","#C00");
-					$("#mensaje-enviado").html('Ocurrió un problema al enviar tu mensaje, intenta nuevamente en instantes.');						
+					$("#mensaje-enviado").html('Ocurrió un problema al enviar tu mensaje,<br /> intenta nuevamente en instantes.');						
 				}
 		   }
 		});
