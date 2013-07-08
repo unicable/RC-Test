@@ -161,10 +161,7 @@ $(document).ready(function(){
 	});
 	
 	//Enviamos mensaje
-	$("#boton_enviar").click(function() {
-		
-		alert($("#pedido").serialize());
-		
+	$("#boton_enviar").click(function() {		
 		if ($("#nombre").val().length < 1) {
 			$("#label_nombre").html('Escribe un nombre.');
 			return false;			
@@ -197,7 +194,8 @@ $(document).ready(function(){
 					//$('#limensaje').hide().delay(800).show();
 					$('#mensaje').hide(400).delay(5000).show(0);
 					$("#mensaje-enviado").css("color","#399");
-					$("#mensaje-enviado").html('Tu mensaje ha sido enviado.');						
+					$("#mensaje-enviado").html('Tu mensaje ha sido enviado.');		
+					$('#pedido').trigger("reset");				
 				}
 				else
 				{					
